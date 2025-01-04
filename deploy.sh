@@ -3,7 +3,7 @@
 ENV_FILE=".env"
 
 # Обновление кода в деплой backend приложения
-pushd ~/Documents/work-projects/ConInstructions/ || exit
+pushd ~/ConInstructions/ || exit
 
 # Переходим на ветку main
 git checkout dev
