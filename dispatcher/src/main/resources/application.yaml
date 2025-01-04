@@ -1,0 +1,17 @@
+server:
+  port: ${DISPATCHER_PORT}
+bot:
+  name: ${TG_BOT_NAME}
+  token: ${TG_BOT_TOKEN}
+  uri: ${TG_BOT_URI}
+
+spring:
+  rabbitmq:
+    host: ${RABBIT_HOST}
+    port: ${RABBIT_PORT}
+    username: ${RABBIT_USERNAME}
+    password: ${RABBIT_PASSWORD}
+    queues:
+      text-message-update: ${RABBIT_TEXT_MESSAGE_UPDATE_QUEUE}
+      callback-message-update: ${RABBIT_CALLBACK_MESSAGE_UPDATE_QUEUE}
+      answer-message: ${RABBIT_ANSWER_MESSAGE_QUEUE}

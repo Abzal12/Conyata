@@ -1,0 +1,26 @@
+server:
+  port: ${NODE_PORT}
+
+spring:
+  rabbitmq:
+    host: ${RABBIT_HOST}
+    port: ${RABBIT_PORT}
+    username: ${RABBIT_USERNAME}
+    password: ${RABBIT_PASSWORD}
+    queues:
+      text_message-update: ${RABBIT_TEXT_MESSAGE_UPDATE_QUEUE}
+      callback-message-update: ${RABBIT_CALLBACK_MESSAGE_UPDATE_QUEUE}
+      answer-message: ${RABBIT_ANSWER_MESSAGE_QUEUE}
+  datasource:
+    url: ${POSTGRES_URL}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect=org:
+          hibernate:
+            dialect: PostgreSQLDialect
