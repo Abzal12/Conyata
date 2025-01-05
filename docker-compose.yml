@@ -126,7 +126,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - tls.yml:/etc/traefik/data/tls.yml
+      - ./tls.yml:/etc/traefik/data/tls.yml
       - /home/conyata/certs:/etc/traefik/certs
     labels:
       - "traefik.enable=true"
