@@ -126,7 +126,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./data:/etc/traefik/data
+      - tls.yml:/etc/traefik/data/tls.yml
       - /home/conyata/certs:/etc/traefik/certs
     labels:
       - "traefik.enable=true"
@@ -154,7 +154,7 @@ services:
       - "--providers.docker=true"
       - "--providers.docker.endpoint=unix:///var/run/docker.sock"
       - "--providers.docker.exposedbydefault=false"
-      - "--providers.file.filename=/etc/traefik/tls.yml"
+      - "--providers.file.filename=/etc/traefik/data/tls.yml"
     healthcheck:
       test: [ "CMD", "wget", "http://127.0.0.1:8888/ping","--spider" ]
       interval: 10s
