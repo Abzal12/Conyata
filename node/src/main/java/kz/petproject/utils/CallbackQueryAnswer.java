@@ -172,16 +172,16 @@ public class CallbackQueryAnswer {
         return sendMessage;
     }
 
-    public SendMessage getFaqMenu2(Long chatId) {
+    public SendMessage getKeMenu(Long chatId) {
         var sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
-        sendMessage.setText(FAQ_TEXT2.getText());
+        sendMessage.setText(KE_TEXT.getText());
 
         InlineKeyboardMarkup inlineMarkup = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> buttonRows = new ArrayList<>();
 
         List<InlineKeyboardButton> buttonRow1 = new ArrayList<>();
-        buttonRow1.add(inlineKeyboardButtonType.getZniButton());
+        buttonRow1.add(inlineKeyboardButtonType.getMainMenuButton());
 
         buttonRows.add(buttonRow1);
 

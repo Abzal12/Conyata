@@ -9,7 +9,7 @@ public enum CallbackQueryDataValue {
     MAINMENU_BUTTON("main_menu"),
 
     ZNI_SUBD_BUTTON("zni_subd_button1"),
-    FAQ_BUTTON2("faq_button2"),
+    kE_BUTTON("ke_button"),
     FAQ_BUTTON3("faq_button3"),
     FAQ_BUTTON4("faq_button4"),
     FAQ_BUTTON5("faq_button5"),

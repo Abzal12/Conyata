@@ -59,11 +59,11 @@ public class InlineKeyboardButtonType {
         return zniSubdButton;
     }
 
-    public InlineKeyboardButton getFaqButton2() {
-        var faqButton = new InlineKeyboardButton();
-        faqButton.setText(EmojiParser.parseToUnicode(FAQ_BUTTON_LABEL2.getLabel()));
-        faqButton.setCallbackData(FAQ_BUTTON2.getValue());
-        return faqButton;
+    public InlineKeyboardButton getKeButton() {
+        var keButton = new InlineKeyboardButton();
+        keButton.setText(EmojiParser.parseToUnicode(KE_BUTTON_LABEL.getLabel()));
+        keButton.setCallbackData(kE_BUTTON.getValue());
+        return keButton;
     }
 
     public InlineKeyboardButton getFaqButton3() {

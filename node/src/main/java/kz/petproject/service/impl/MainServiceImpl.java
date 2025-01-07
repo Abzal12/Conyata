@@ -82,8 +82,8 @@ public class MainServiceImpl implements MainService {
             output = textCmdAnswer.getMainMenu(chatId);
         } else if (callbackData.equals(ZNI_SUBD_BUTTON.getValue())) {
             output = callbackQueryAnswer.getZniSubdMenu(chatId);
-        } else if (callbackData.equals(FAQ_BUTTON2.getValue())) {
-            output = callbackQueryAnswer.getFaqMenu2(chatId);
+        } else if (callbackData.equals(kE_BUTTON.getValue())) {
+            output = callbackQueryAnswer.getKeMenu(chatId);
         } else if (callbackData.equals(FAQ_BUTTON3.getValue())) {
             output = callbackQueryAnswer.getFaqMenu3(chatId);
         } else if (callbackData.equals(FAQ_BUTTON4.getValue())) {
