@@ -26,7 +26,6 @@ public class UpdateController {
     }
 
     public void processUpdate(Update update) {
-        log.debug(update);
         if (update == null) {
             log.error("Received update is null");
             return;
