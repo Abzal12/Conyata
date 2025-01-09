@@ -75,14 +75,14 @@ public class MainServiceImpl implements MainService {
         } else if (callbackData.equals(ZNO_PPO_BUTTON.getValue())) {
             output = callbackQueryAnswer.getZnoPpoMenu(chatId);
             photoIds.add(String.valueOf(chatId));
-            photoIds.add("AgACAgIAAxkBAAN7Z3-BD4xu1jVbZZfC3kx_nV2M2-UAAh3nMRtRnwABSFYvebsqpP94AQADAgADeQADNgQ");
-            photoIds.add("AgACAgIAAxkBAAN8Z3-BSnVOMQRGeh20gfj7HwJuTx4AAiHnMRtRnwABSNLPwHwI0hvFAQADAgADeQADNgQ");
-            photoIds.add("AgACAgIAAxkBAAN9Z3-Bc4zs3bCFzU0qLLRt5bt1X-AAAiPnMRtRnwABSBMIhkWhH6tLAQADAgADeQADNgQ");
-            photoIds.add("AgACAgIAAxkBAAN-Z3-B2lZXnMCKeBQlBstiDtUO1bMAAifnMRtRnwABSNfMUKLS3m79AQADAgADeQADNgQ");
-            photoIds.add("AgACAgIAAxkBAAN_Z3-CHpvtoh_2WtrfzOJPpcKM18oAAinnMRtRnwABSFflOU4SOcwXAQADAgADeQADNgQ");
-            photoIds.add("AgACAgIAAxkBAAOAZ3-COAOrcS2aP44ajzXrxuWBtZ0AAirnMRtRnwABSKyLw87kCVh9AQADAgADeQADNgQ");
-            photoIds.add("AgACAgIAAxkBAAOBZ3-CYR3QNhGTS2AgJmZ1ku2R4koAAivnMRtRnwABSKzl_1psPJtXAQADAgADeQADNgQ");
-            photoIds.add("AgACAgIAAxkBAAOCZ3-Cjt2BqNZgfC0yK5iQ6t70suwAAiznMRtRnwABSFB5UFvbIrIQAQADAgADeQADNgQ");
+            photoIds.add("AgACAgIAAxkBAAIJGWd_loPM9dBZbB-KNaWqUlqdXW-HAAL75zEbHuH4S-U_l1s96XtCAQADAgADeAADNgQ");
+            photoIds.add("AgACAgIAAxkBAAIJG2d_lskVY1oCluQ31bb5Iqkc9rWLAAIB6DEbHuH4Sxw7RPSjx9NnAQADAgADcwADNgQ");
+            photoIds.add("AgACAgIAAxkBAAIJHGd_ltCrEY3kvjdj8bY67yotDG7nAAIC6DEbHuH4S7hKwtKvqXTNAQADAgADcwADNgQ");
+            photoIds.add("AgACAgIAAxkBAAIJHWd_ltaj-Ep8wP0mbMD9dmaWhgsgAAID6DEbHuH4S5HKzIjHvZVKAQADAgADeAADNgQ");
+            photoIds.add("AgACAgIAAxkBAAIJHmd_ltvagt8QsCKh1kEQK-hU1Sz0AAIE6DEbHuH4S6yymFMCPG9mAQADAgADeAADNgQ");
+            photoIds.add("AgACAgIAAxkBAAIJH2d_luF3H9jSVg8_82EYp4S6XdobAAIF6DEbHuH4SxqdoAKk7UjpAQADAgADcwADNgQ");
+            photoIds.add("AgACAgIAAxkBAAIJIGd_luZy_a_SZGbjUspdDeVVAAGQoQACBugxGx7h-Ev_2pUvmScfBAEAAwIAA20AAzYE");
+            photoIds.add("AgACAgIAAxkBAAIJIWd_luw4udzWF5Jz8OH7C_ZYDxNVAAIH6DEbHuH4S4NChsiP5NVLAQADAgADeQADNgQ");
         } else if (callbackData.equals(ZNO_SUBD_BUTTON.getValue())) {
             output = callbackQueryAnswer.getZnoSubdMenu(chatId);
         } else if (callbackData.equals(ZNI_BUTTON.getValue())) {
