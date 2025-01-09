@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c9db278-b922-4a5a-9136-d1e947e0e861" name="Changes" comment="Add files for vps">
-      <change afterPath="$PROJECT_DIR$/tls.yml" afterDir="false" />
+    <list default="true" id="8c9db278-b922-4a5a-9136-d1e947e0e861" name="Changes" comment="Add ke-related things">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/configuration/RabbitConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/configuration/RabbitConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/controller/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/controller/TelegramBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/controller/UpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/controller/UpdateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/service/AnswerConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/service/AnswerConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/service/impl/AnswerConsumerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/service/impl/AnswerConsumerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/src/main/java/kz/petproject/service/ProducerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/node/src/main/java/kz/petproject/service/ProducerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/src/main/java/kz/petproject/service/impl/MainServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/node/src/main/java/kz/petproject/service/impl/MainServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,18 +32,18 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.DispatcherApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Админ/Desktop/conyata/ConInstructions2/dispatcher",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.DispatcherApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Админ/Desktop/conyata_test/ConInstructions_test&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="DispatcherApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="kz.petproject.DispatcherApplication" />
@@ -104,7 +110,63 @@
       <option name="project" value="LOCAL" />
       <updated>1736009303940</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add traefik and some minor changes">
+      <option name="closed" value="true" />
+      <created>1736013620364</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736013620364</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add traefik and some minor changes">
+      <option name="closed" value="true" />
+      <created>1736017693062</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1736017693062</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Change traefik part">
+      <option name="closed" value="true" />
+      <created>1736018417947</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1736018417947</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Change traefik part 2">
+      <option name="closed" value="true" />
+      <created>1736088168546</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1736088168546</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Change traefik part 3">
+      <option name="closed" value="true" />
+      <created>1736093409722</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1736093409722</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Change traefik part 4">
+      <option name="closed" value="true" />
+      <created>1736093725343</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1736093725343</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add ke-related things">
+      <option name="closed" value="true" />
+      <created>1736256807016</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1736256807016</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,6 +182,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add files for vps" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add files for vps" />
+    <MESSAGE value="Add traefik and some minor changes" />
+    <MESSAGE value="Change traefik part" />
+    <MESSAGE value="Change traefik part 2" />
+    <MESSAGE value="Change traefik part 3" />
+    <MESSAGE value="Change traefik part 4" />
+    <MESSAGE value="Add ke-related things" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ke-related things" />
   </component>
 </project>

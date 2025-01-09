@@ -16,6 +16,8 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.User;
 
+import java.util.ArrayList;
+
 import static kz.petproject.entity.UserState.BASIC_STATE;
 import static kz.petproject.entity.UserState.WAIT_FOR_CONFIRMATION_STATE;
 import static kz.petproject.service.enums.ServiceCommand.*;
@@ -30,7 +32,6 @@ public class MainServiceImpl implements MainService {
     private final CallbackQueryAnswer callbackQueryAnswer;
     private final TextCmdAnswer textCmdAnswer;
     private final ErrorAnswer errorAnswer;
-    private final KeyboardMarkupType keyboardMarkupType;
 
     @Override
     public void processTextMessage(Update update) {
@@ -63,6 +64,7 @@ public class MainServiceImpl implements MainService {
         var chatId = update.getCallbackQuery().getMessage().getChatId();
         var callbackData = update.getCallbackQuery().getData();
         SendMessage output = null;
+        ArrayList<String> photoIds = new ArrayList<>();
 
         if (isNotAllowToSendVipCmd(chatId, appUser)) {
             return;
@@ -72,6 +74,15 @@ public class MainServiceImpl implements MainService {
             output = callbackQueryAnswer.getZnoMenu(chatId);
         } else if (callbackData.equals(ZNO_PPO_BUTTON.getValue())) {
             output = callbackQueryAnswer.getZnoPpoMenu(chatId);
+            photoIds.add(String.valueOf(chatId));
+            photoIds.add("AgACAgIAAxkBAAN7Z3-BD4xu1jVbZZfC3kx_nV2M2-UAAh3nMRtRnwABSFYvebsqpP94AQADAgADeQADNgQ");
+            photoIds.add("AgACAgIAAxkBAAN8Z3-BSnVOMQRGeh20gfj7HwJuTx4AAiHnMRtRnwABSNLPwHwI0hvFAQADAgADeQADNgQ");
+            photoIds.add("AgACAgIAAxkBAAN9Z3-Bc4zs3bCFzU0qLLRt5bt1X-AAAiPnMRtRnwABSBMIhkWhH6tLAQADAgADeQADNgQ");
+            photoIds.add("AgACAgIAAxkBAAN-Z3-B2lZXnMCKeBQlBstiDtUO1bMAAifnMRtRnwABSNfMUKLS3m79AQADAgADeQADNgQ");
+            photoIds.add("AgACAgIAAxkBAAN_Z3-CHpvtoh_2WtrfzOJPpcKM18oAAinnMRtRnwABSFflOU4SOcwXAQADAgADeQADNgQ");
+            photoIds.add("AgACAgIAAxkBAAOAZ3-COAOrcS2aP44ajzXrxuWBtZ0AAirnMRtRnwABSKyLw87kCVh9AQADAgADeQADNgQ");
+            photoIds.add("AgACAgIAAxkBAAOBZ3-CYR3QNhGTS2AgJmZ1ku2R4koAAivnMRtRnwABSKzl_1psPJtXAQADAgADeQADNgQ");
+            photoIds.add("AgACAgIAAxkBAAOCZ3-Cjt2BqNZgfC0yK5iQ6t70suwAAiznMRtRnwABSFB5UFvbIrIQAQADAgADeQADNgQ");
         } else if (callbackData.equals(ZNO_SUBD_BUTTON.getValue())) {
             output = callbackQueryAnswer.getZnoSubdMenu(chatId);
         } else if (callbackData.equals(ZNI_BUTTON.getValue())) {
@@ -104,6 +115,14 @@ public class MainServiceImpl implements MainService {
         }
 
         sendAnswer(output);
+
+        if (!photoIds.isEmpty()) {
+            sendPhotoId(photoIds);
+        }
+    }
+
+    private void sendPhotoId(ArrayList<String> photoIds) {
+        producerService.producePhotoId(photoIds);
     }
 
     public boolean isNotAllowToSendVipCmd(Long chatId, AppUser appUser) {

@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 
+import java.util.ArrayList;
+
 @RequiredArgsConstructor
 @Service
 public class ProducerServiceImpl implements ProducerService {
@@ -15,8 +17,16 @@ public class ProducerServiceImpl implements ProducerService {
     @Value("${spring.rabbitmq.queues.answer-message}")
     private String answerMessageQueue;
 
+    @Value("${spring.rabbitmq.queues.answer-photo-id}")
+    private String answerPhotoIdQueue;
+
     @Override
     public void produceAnswer(SendMessage sendMessage) {
         rabbitTemplate.convertAndSend(answerMessageQueue, sendMessage);
+    }
+
+    @Override
+    public void producePhotoId(ArrayList<String> photoIds) {
+        rabbitTemplate.convertAndSend(answerPhotoIdQueue, photoIds);
     }
 }
