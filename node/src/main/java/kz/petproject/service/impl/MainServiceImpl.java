@@ -65,7 +65,7 @@ public class MainServiceImpl implements MainService {
         var appUser = findOrSaveAppUser(update);
         var chatId = update.getCallbackQuery().getMessage().getChatId();
         var callbackData = update.getCallbackQuery().getData();
-        SendMessage output = null;
+        SendMessage output;
         ArrayList<String> photoIds = new ArrayList<>(Arrays.asList(String.valueOf(chatId)));
 
         if (isNotAllowToSendVipCmd(chatId, appUser)) {

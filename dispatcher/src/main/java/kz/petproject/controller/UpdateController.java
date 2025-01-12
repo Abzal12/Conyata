@@ -26,13 +26,14 @@ public class UpdateController {
     }
 
     public void processUpdate(Update update) {
-        log.debug(update.getMessage().getPhoto().get(0).getFileId());
+        log.debug(update.getMessage());
         if (update == null) {
             log.error("Received update is null");
             return;
         }
 
         if (update.hasMessage() || update.hasCallbackQuery()) {
+            log.debug("Dispatcher: the message is received");
             distirbuteMessageByType(update);
         } else {
             log.error("Received unsupported message type " + update);
