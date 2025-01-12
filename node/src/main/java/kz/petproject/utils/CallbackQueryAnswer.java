@@ -194,7 +194,7 @@ public class CallbackQueryAnswer {
     public SendMessage getVygruzkaMenu(Long chatId) {
         var sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
-        sendMessage.setText(FAQ_TEXT3.getText());
+        sendMessage.setText(VYGRUZKA_TEXT.getText());
 
         InlineKeyboardMarkup inlineMarkup = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> buttonRows = new ArrayList<>();
