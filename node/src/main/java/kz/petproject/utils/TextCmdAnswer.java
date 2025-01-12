@@ -42,11 +42,15 @@ public class TextCmdAnswer {
         buttonRow2.add(inlineKeyboardButtonType.getZniButton());
 
         List<InlineKeyboardButton> buttonRow3 = new ArrayList<>();
-        buttonRow3.add(inlineKeyboardButtonType.getKeButton());
+        buttonRow3.add(inlineKeyboardButtonType.getVygruzkaButton());
+
+        List<InlineKeyboardButton> buttonRow4 = new ArrayList<>();
+        buttonRow4.add(inlineKeyboardButtonType.getKeButton());
 
         buttonRows.add(buttonRow1);
         buttonRows.add(buttonRow2);
         buttonRows.add(buttonRow3);
+        buttonRows.add(buttonRow4);
 
         markupInLine.setKeyboard(buttonRows);
         sendMessage.setReplyMarkup(markupInLine);

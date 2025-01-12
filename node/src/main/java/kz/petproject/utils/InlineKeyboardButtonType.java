@@ -20,7 +20,7 @@ public class InlineKeyboardButtonType {
     public InlineKeyboardButton getZnoPpoButton() {
         var znoPpoButton = new InlineKeyboardButton();
         znoPpoButton.setText(EmojiParser.parseToUnicode(ZNO_PPO_BUTTON_LABEL.getLabel()));
-        znoPpoButton.setCallbackData(ZNO_PPO_BUTTON.getValue());
+        znoPpoButton.setCallbackData(ZNO_PLAN_BUTTON.getValue());
         return znoPpoButton;
     }
 
@@ -38,11 +38,11 @@ public class InlineKeyboardButtonType {
         return zniButton;
     }
 
-    public InlineKeyboardButton getZniPpoButton() {
-        var zniPpoButton = new InlineKeyboardButton();
-        zniPpoButton.setText(EmojiParser.parseToUnicode(ZNI_PPO_LABEL.getLabel()));
-        zniPpoButton.setCallbackData(ZNI_PPO_BUTTON.getValue());
-        return zniPpoButton;
+    public InlineKeyboardButton getZniPlanButton() {
+        var zniPlanButton = new InlineKeyboardButton();
+        zniPlanButton.setText(EmojiParser.parseToUnicode(ZNI_PLAN_LABEL.getLabel()));
+        zniPlanButton.setCallbackData(ZNI_PLAN_BUTTON.getValue());
+        return zniPlanButton;
     }
 
     public InlineKeyboardButton getMainMenuButton() {
@@ -52,11 +52,11 @@ public class InlineKeyboardButtonType {
         return mainMenuButton;
     }
 
-    public InlineKeyboardButton getZniSubdButton() {
-        var zniSubdButton = new InlineKeyboardButton();
-        zniSubdButton.setText(EmojiParser.parseToUnicode(ZNI_SUBD_BUTTON_LABEL.getLabel()));
-        zniSubdButton.setCallbackData(ZNI_SUBD_BUTTON.getValue());
-        return zniSubdButton;
+    public InlineKeyboardButton getZniVneplanButton() {
+        var zniVneplanButton = new InlineKeyboardButton();
+        zniVneplanButton.setText(EmojiParser.parseToUnicode(ZNI_VNEPLAN_BUTTON_LABEL.getLabel()));
+        zniVneplanButton.setCallbackData(ZNI_VNEPLAN_BUTTON.getValue());
+        return zniVneplanButton;
     }
 
     public InlineKeyboardButton getKeButton() {
@@ -66,11 +66,11 @@ public class InlineKeyboardButtonType {
         return keButton;
     }
 
-    public InlineKeyboardButton getFaqButton3() {
-        var faqButton = new InlineKeyboardButton();
-        faqButton.setText(EmojiParser.parseToUnicode(FAQ_BUTTON_LABEL3.getLabel()));
-        faqButton.setCallbackData(FAQ_BUTTON3.getValue());
-        return faqButton;
+    public InlineKeyboardButton getVygruzkaButton() {
+        var vygruzkaButton = new InlineKeyboardButton();
+        vygruzkaButton.setText(EmojiParser.parseToUnicode(VYGRUZKA_BUTTON_LABEL.getLabel()));
+        vygruzkaButton.setCallbackData(VYGRUZKA_BUTTON.getValue());
+        return vygruzkaButton;
     }
 
     public InlineKeyboardButton getFaqButton4() {

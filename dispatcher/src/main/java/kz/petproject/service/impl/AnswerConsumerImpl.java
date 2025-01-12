@@ -27,13 +27,14 @@ public class AnswerConsumerImpl implements AnswerConsumer {
         if (!photoIds.isEmpty()) {
             String chatId = photoIds.get(0);
             for (int i = 1; i < photoIds.size(); i++) {
+                updateController.setPhotoView(chatId, photoIds.get(i));
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(250);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                     System.err.println("Thread was interrupted: " + e.getMessage());
                 }
-                updateController.setPhotoView(chatId, photoIds.get(i));
+
             }
         }
     }

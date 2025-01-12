@@ -26,6 +26,7 @@ public class UpdateController {
     }
 
     public void processUpdate(Update update) {
+        log.debug(update.getMessage().getPhoto().get(0).getFileId());
         if (update == null) {
             log.error("Received update is null");
             return;

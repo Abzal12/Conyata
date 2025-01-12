@@ -106,10 +106,10 @@ public class CallbackQueryAnswer {
         List<List<InlineKeyboardButton>> buttonRows = new ArrayList<>();
 
         List<InlineKeyboardButton> buttonRow1 = new ArrayList<>();
-        buttonRow1.add(inlineKeyboardButtonType.getZniPpoButton());
+        buttonRow1.add(inlineKeyboardButtonType.getZniPlanButton());
 
         List<InlineKeyboardButton> buttonRow2 = new ArrayList<>();
-        buttonRow2.add(inlineKeyboardButtonType.getZniSubdButton());
+        buttonRow2.add(inlineKeyboardButtonType.getZniVneplanButton());
 
         List<InlineKeyboardButton> buttonRow3 = new ArrayList<>();
         buttonRow3.add(inlineKeyboardButtonType.getMainMenuButton());
@@ -124,10 +124,10 @@ public class CallbackQueryAnswer {
         return sendMessage;
     }
 
-    public SendMessage getZniPpoMenu(Long chatId, Update update) {
+    public SendMessage getZniPlanMenu(Long chatId, Update update) {
         var sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
-        sendMessage.setText(ZNI_PPO_TEXT.getText());
+        sendMessage.setText(ZNI_PLAN_TEXT.getText());
         sendMessage.setParseMode("HTML");
 
         InlineKeyboardMarkup inlineMarkup = new InlineKeyboardMarkup();
@@ -148,10 +148,10 @@ public class CallbackQueryAnswer {
         return sendMessage;
     }
 
-    public SendMessage getZniSubdMenu(Long chatId) {
+    public SendMessage getZniVneplanMenu(Long chatId) {
         var sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
-        sendMessage.setText(ZNI_SUBD_TEXT.getText());
+        sendMessage.setText(ZNI_VNEPLAN_TEXT.getText());
         sendMessage.setParseMode("HTML");
 
         InlineKeyboardMarkup inlineMarkup = new InlineKeyboardMarkup();
@@ -191,7 +191,7 @@ public class CallbackQueryAnswer {
         return sendMessage;
     }
 
-    public SendMessage getFaqMenu3(Long chatId) {
+    public SendMessage getVygruzkaMenu(Long chatId) {
         var sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
         sendMessage.setText(FAQ_TEXT3.getText());
@@ -200,7 +200,7 @@ public class CallbackQueryAnswer {
         List<List<InlineKeyboardButton>> buttonRows = new ArrayList<>();
 
         List<InlineKeyboardButton> buttonRow1 = new ArrayList<>();
-        buttonRow1.add(inlineKeyboardButtonType.getZniButton());
+        buttonRow1.add(inlineKeyboardButtonType.getMainMenuButton());
 
         buttonRows.add(buttonRow1);
 

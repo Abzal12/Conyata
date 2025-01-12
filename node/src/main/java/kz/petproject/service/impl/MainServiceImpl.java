@@ -7,8 +7,8 @@ import kz.petproject.service.ProducerService;
 import kz.petproject.service.enums.ServiceCommand;
 import kz.petproject.utils.CallbackQueryAnswer;
 import kz.petproject.utils.ErrorAnswer;
-import kz.petproject.utils.KeyboardMarkupType;
 import kz.petproject.utils.TextCmdAnswer;
+import kz.petproject.utils.photo_ids.PhotoIds;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import org.springframework.stereotype.Service;
@@ -17,6 +17,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.User;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static kz.petproject.entity.UserState.BASIC_STATE;
 import static kz.petproject.entity.UserState.WAIT_FOR_CONFIRMATION_STATE;
@@ -32,6 +33,7 @@ public class MainServiceImpl implements MainService {
     private final CallbackQueryAnswer callbackQueryAnswer;
     private final TextCmdAnswer textCmdAnswer;
     private final ErrorAnswer errorAnswer;
+    private final PhotoIds photoIdConstants;
 
     @Override
     public void processTextMessage(Update update) {
@@ -39,7 +41,7 @@ public class MainServiceImpl implements MainService {
         var userState = appUser.getUserState();
         var text = update.getMessage().getText();
         var chatId = update.getMessage().getChatId();
-        SendMessage output = null;
+        SendMessage output;
 
         if (isNotAllowToSendVipCmd(chatId, appUser)) {
             return;
@@ -64,7 +66,7 @@ public class MainServiceImpl implements MainService {
         var chatId = update.getCallbackQuery().getMessage().getChatId();
         var callbackData = update.getCallbackQuery().getData();
         SendMessage output = null;
-        ArrayList<String> photoIds = new ArrayList<>();
+        ArrayList<String> photoIds = new ArrayList<>(Arrays.asList(String.valueOf(chatId)));
 
         if (isNotAllowToSendVipCmd(chatId, appUser)) {
             return;
@@ -72,31 +74,28 @@ public class MainServiceImpl implements MainService {
 
         if (callbackData.equals(ZNO_BUTTON.getValue())) {
             output = callbackQueryAnswer.getZnoMenu(chatId);
-        } else if (callbackData.equals(ZNO_PPO_BUTTON.getValue())) {
+        } else if (callbackData.equals(ZNO_PLAN_BUTTON.getValue())) {
             output = callbackQueryAnswer.getZnoPpoMenu(chatId);
             photoIds.add(String.valueOf(chatId));
-            photoIds.add("AgACAgIAAxkBAAIJGWd_loPM9dBZbB-KNaWqUlqdXW-HAAL75zEbHuH4S-U_l1s96XtCAQADAgADeAADNgQ");
-            photoIds.add("AgACAgIAAxkBAAIJG2d_lskVY1oCluQ31bb5Iqkc9rWLAAIB6DEbHuH4Sxw7RPSjx9NnAQADAgADcwADNgQ");
-            photoIds.add("AgACAgIAAxkBAAIJHGd_ltCrEY3kvjdj8bY67yotDG7nAAIC6DEbHuH4S7hKwtKvqXTNAQADAgADcwADNgQ");
-            photoIds.add("AgACAgIAAxkBAAIJHWd_ltaj-Ep8wP0mbMD9dmaWhgsgAAID6DEbHuH4S5HKzIjHvZVKAQADAgADeAADNgQ");
-            photoIds.add("AgACAgIAAxkBAAIJHmd_ltvagt8QsCKh1kEQK-hU1Sz0AAIE6DEbHuH4S6yymFMCPG9mAQADAgADeAADNgQ");
-            photoIds.add("AgACAgIAAxkBAAIJH2d_luF3H9jSVg8_82EYp4S6XdobAAIF6DEbHuH4SxqdoAKk7UjpAQADAgADcwADNgQ");
-            photoIds.add("AgACAgIAAxkBAAIJIGd_luZy_a_SZGbjUspdDeVVAAGQoQACBugxGx7h-Ev_2pUvmScfBAEAAwIAA20AAzYE");
-            photoIds.add("AgACAgIAAxkBAAIJIWd_luw4udzWF5Jz8OH7C_ZYDxNVAAIH6DEbHuH4S4NChsiP5NVLAQADAgADeQADNgQ");
+            photoIds.addAll(photoIdConstants.znoPpoPhotoIds);
         } else if (callbackData.equals(ZNO_SUBD_BUTTON.getValue())) {
             output = callbackQueryAnswer.getZnoSubdMenu(chatId);
+            photoIds.addAll(photoIdConstants.znoSubdPhotoIds);
         } else if (callbackData.equals(ZNI_BUTTON.getValue())) {
             output = callbackQueryAnswer.getZniMenu(chatId);
-        } else if (callbackData.equals(ZNI_PPO_BUTTON.getValue())) {
-            output = callbackQueryAnswer.getZniPpoMenu(chatId, update);
+        } else if (callbackData.equals(ZNI_PLAN_BUTTON.getValue())) {
+            output = callbackQueryAnswer.getZniPlanMenu(chatId, update);
+            photoIds.addAll(photoIdConstants.zniPlanPhotoIds);
         } else if (callbackData.equals(MAINMENU_BUTTON.getValue())) {
             output = textCmdAnswer.getMainMenu(chatId);
-        } else if (callbackData.equals(ZNI_SUBD_BUTTON.getValue())) {
-            output = callbackQueryAnswer.getZniSubdMenu(chatId);
+        } else if (callbackData.equals(ZNI_VNEPLAN_BUTTON.getValue())) {
+            output = callbackQueryAnswer.getZniVneplanMenu(chatId);
+            photoIds.addAll(photoIdConstants.zniVneplanPhotoIds);
         } else if (callbackData.equals(kE_BUTTON.getValue())) {
             output = callbackQueryAnswer.getKeMenu(chatId);
-        } else if (callbackData.equals(FAQ_BUTTON3.getValue())) {
-            output = callbackQueryAnswer.getFaqMenu3(chatId);
+        } else if (callbackData.equals(VYGRUZKA_BUTTON.getValue())) {
+            output = callbackQueryAnswer.getVygruzkaMenu(chatId);
+            photoIds.addAll(photoIdConstants.vygruzkaPhotoIds);
         } else if (callbackData.equals(FAQ_BUTTON4.getValue())) {
             output = callbackQueryAnswer.getFaqMenu4(chatId);
         } else if (callbackData.equals(FAQ_BUTTON5.getValue())) {
@@ -114,10 +113,17 @@ public class MainServiceImpl implements MainService {
             output = errorAnswer.sendError(chatId);
         }
 
-        sendAnswer(output);
-
-        if (!photoIds.isEmpty()) {
+        if (photoIds.size() > 1) {
             sendPhotoId(photoIds);
+            try {
+                Thread.sleep(3300);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                System.err.println("Thread was interrupted: " + e.getMessage());
+            }
+            sendAnswer(output);
+        } else {
+            sendAnswer(output);
         }
     }
 

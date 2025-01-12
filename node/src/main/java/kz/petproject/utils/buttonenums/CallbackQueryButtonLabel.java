@@ -4,16 +4,16 @@ import com.vdurmont.emoji.EmojiParser;
 
 public enum CallbackQueryButtonLabel {
 
-    ZNO_BUTTON_LABEL(EmojiParser.parseToUnicode(":robot_face: ЗНО :robot_face:")),
-    ZNO_PPO_BUTTON_LABEL(EmojiParser.parseToUnicode(":moneybag: ЗНО ППО :moneybag:")),
-    ZNO_SUBD_BUTTON_LABEL(EmojiParser.parseToUnicode(":gift: ЗНО СУБД :gift:")),
-    ZNI_BUTTON_LABEL(EmojiParser.parseToUnicode(":bulb: ЗНИ :bulb:")),
-    ZNI_PPO_LABEL(EmojiParser.parseToUnicode(":white_check_mark: ЗНИ ППО :white_check_mark:")),
-    MAINMENU_BUTTON_LABEL(EmojiParser.parseToUnicode(":recycle: В ГЛАВНОЕ МЕНЮ :recycle:")),
+    ZNO_BUTTON_LABEL(EmojiParser.parseToUnicode("ЗНО")),
+    ZNO_PPO_BUTTON_LABEL(EmojiParser.parseToUnicode("ЗНО ППО")),
+    ZNO_SUBD_BUTTON_LABEL(EmojiParser.parseToUnicode("ЗНО СУБД")),
+    ZNI_BUTTON_LABEL(EmojiParser.parseToUnicode("ЗНИ")),
+    ZNI_PLAN_LABEL(EmojiParser.parseToUnicode(" ЗНИ плановое")),
+    MAINMENU_BUTTON_LABEL(EmojiParser.parseToUnicode("В ГЛАВНОЕ МЕНЮ")),
+    ZNI_VNEPLAN_BUTTON_LABEL("ЗНИ внеплан"),
+    KE_BUTTON_LABEL("КЕ"),
+    VYGRUZKA_BUTTON_LABEL("Выгрузка-select"),
 
-    ZNI_SUBD_BUTTON_LABEL("\uD83D\uDC49ЗНИ СУБД"),
-    KE_BUTTON_LABEL("\uD83D\uDC49КЕ"),
-    FAQ_BUTTON_LABEL3("\uD83D\uDC49Сколько я смогу зарабатывать?"),
     FAQ_BUTTON_LABEL4("\uD83D\uDC49Насколько это безопасно?"),
     FAQ_BUTTON_LABEL5("\uD83D\uDC49Как часто я могу выводить прибыль?"),
     FAQ_BUTTON_LABEL6("\uD83D\uDC49Как работает партнерская программа?"),

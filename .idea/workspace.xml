@@ -4,22 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c9db278-b922-4a5a-9136-d1e947e0e861" name="Changes" comment="Add ke-related things">
+    <list default="true" id="8c9db278-b922-4a5a-9136-d1e947e0e861" name="Changes" comment="Delete log.debug(update);">
+      <change afterPath="$PROJECT_DIR$/node/src/main/java/kz/petproject/utils/photo_ids/PhotoIds.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/configuration/RabbitConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/configuration/RabbitConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/controller/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/controller/TelegramBot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/controller/UpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/controller/UpdateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/service/AnswerConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/service/AnswerConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/service/impl/AnswerConsumerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/kz/petproject/service/impl/AnswerConsumerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node/src/main/java/kz/petproject/service/ProducerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/node/src/main/java/kz/petproject/service/ProducerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node/src/main/java/kz/petproject/service/impl/MainServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/node/src/main/java/kz/petproject/service/impl/MainServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/src/main/java/kz/petproject/utils/CallbackQueryAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/node/src/main/java/kz/petproject/utils/CallbackQueryAnswer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/src/main/java/kz/petproject/utils/InlineKeyboardButtonType.java" beforeDir="false" afterPath="$PROJECT_DIR$/node/src/main/java/kz/petproject/utils/InlineKeyboardButtonType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/src/main/java/kz/petproject/utils/TextCmdAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/node/src/main/java/kz/petproject/utils/TextCmdAnswer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/src/main/java/kz/petproject/utils/buttonenums/CallbackQueryButtonLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/node/src/main/java/kz/petproject/utils/buttonenums/CallbackQueryButtonLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/src/main/java/kz/petproject/utils/buttonenums/CallbackQueryDataValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/node/src/main/java/kz/petproject/utils/buttonenums/CallbackQueryDataValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/src/main/java/kz/petproject/utils/buttonenums/CallbackQueryText.java" beforeDir="false" afterPath="$PROJECT_DIR$/node/src/main/java/kz/petproject/utils/buttonenums/CallbackQueryText.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -166,7 +174,39 @@
       <option name="project" value="LOCAL" />
       <updated>1736256807016</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add photos to zno ppo">
+      <option name="closed" value="true" />
+      <created>1736412039762</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1736412039762</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add log.debug(update) to gather photoIds">
+      <option name="closed" value="true" />
+      <created>1736414468616</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1736414468616</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add proper photo ids for production">
+      <option name="closed" value="true" />
+      <created>1736416291878</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1736416291878</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Delete log.debug(update);">
+      <option name="closed" value="true" />
+      <created>1736416422129</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1736416422129</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,6 +228,10 @@
     <MESSAGE value="Change traefik part 3" />
     <MESSAGE value="Change traefik part 4" />
     <MESSAGE value="Add ke-related things" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ke-related things" />
+    <MESSAGE value="Add photos to zno ppo" />
+    <MESSAGE value="Add log.debug(update) to gather photoIds" />
+    <MESSAGE value="Add proper photo ids for production" />
+    <MESSAGE value="Delete log.debug(update);" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete log.debug(update);" />
   </component>
 </project>
