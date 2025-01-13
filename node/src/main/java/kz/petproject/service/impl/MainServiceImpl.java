@@ -116,7 +116,7 @@ public class MainServiceImpl implements MainService {
         if (photoIds.size() > 1) {
             sendPhotoId(photoIds);
             try {
-                int millis = 420 * photoIds.size();
+                int millis = 520 * photoIds.size();
                 Thread.sleep(millis);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
