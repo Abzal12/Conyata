@@ -116,7 +116,8 @@ public class MainServiceImpl implements MainService {
         if (photoIds.size() > 1) {
             sendPhotoId(photoIds);
             try {
-                Thread.sleep(3300);
+                int millis = 420 * photoIds.size();
+                Thread.sleep(millis);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 System.err.println("Thread was interrupted: " + e.getMessage());
@@ -171,7 +172,7 @@ public class MainServiceImpl implements MainService {
     }
 
     private AppUser findOrSaveAppUser(Update update) {
-        User telegramUser = null;
+        User telegramUser;
         if (update.hasCallbackQuery()) {
             telegramUser = update.getCallbackQuery().getFrom();
         } else {
