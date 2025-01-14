@@ -16,6 +16,8 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.User;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -66,6 +68,7 @@ public class MainServiceImpl implements MainService {
         var chatId = update.getCallbackQuery().getMessage().getChatId();
         var callbackData = update.getCallbackQuery().getData();
         SendMessage output;
+        SendMessage sendText = null;
         ArrayList<String> photoIds = new ArrayList<>(Arrays.asList(String.valueOf(chatId)));
 
         if (isNotAllowToSendVipCmd(chatId, appUser)) {
@@ -91,6 +94,19 @@ public class MainServiceImpl implements MainService {
         } else if (callbackData.equals(ZNI_VNEPLAN_BUTTON.getValue())) {
             output = callbackQueryAnswer.getZniVneplanMenu(chatId);
             photoIds.addAll(photoIdConstants.zniVneplanPhotoIds);
+
+            LocalDate today = LocalDate.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+            String formattedDate = today.format(formatter);
+            sendText = new SendMessage();
+            sendText.setChatId(chatId);
+            sendText.setText(
+                    "Заготовленный текст для СЗ:\n\n" +
+                            "Департамент Е-лицензирования и интегрированной информационной системы «Центр обслуживания " +
+                            "населения» просит согласовать проведение внепланового обновления ИИС ЦОН в 21:00 часов " + formattedDate +
+                            " года на основании письма от НАО «Государственная корпорация «Правительство для граждан»"
+            );
+
         } else if (callbackData.equals(kE_BUTTON.getValue())) {
             output = callbackQueryAnswer.getKeMenu(chatId);
         } else if (callbackData.equals(VYGRUZKA_BUTTON.getValue())) {
@@ -121,6 +137,9 @@ public class MainServiceImpl implements MainService {
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 System.err.println("Thread was interrupted: " + e.getMessage());
+            }
+            if (sendText != null) {
+                sendAnswer(sendText);
             }
             sendAnswer(output);
         } else {
