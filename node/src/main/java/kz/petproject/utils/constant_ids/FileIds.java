@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 @Getter
 @Component
 public class FileIds {
-    private String scriptConRole = "BQACAgIAAxkBAAICEmeGwt0fGV00QUplX9RYWn5KoIAUAAL4ZAAC-rY5SHwuA1hO2ZN1NgQ";
-    private String scriptSpecConRole = "BQACAgIAAxkBAAICE2eGw8YDafWO07UZQ-5CIzFjL0NDAAILZQAC-rY5SMg-f4Ti-Fh1NgQ";
+    private String scriptConRole = "BQACAgIAAxkBAAIMc2eH-GOVQTqaAbb5jW6B4SckR8DkAAJRbQAC_PZBSDnBW9rE5nWeNgQ";
+    private String scriptSpecConRole = "BQACAgIAAxkBAAIMdWeH-G4Zl7sMaVEukGGy0UhoSPTPAAJUbQAC_PZBSOR90FXCGlrbNgQ";
 }
