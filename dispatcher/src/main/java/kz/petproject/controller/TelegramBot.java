@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramWebhookBot;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
+import org.telegram.telegrambots.meta.api.methods.send.SendDocument;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.methods.updates.SetWebhook;
@@ -64,6 +65,16 @@ public class TelegramBot extends TelegramWebhookBot {
         if (sendPhoto != null) {
             try {
                 execute(sendPhoto);
+            } catch (TelegramApiException e) {
+                log.error(e);
+            }
+        }
+    }
+
+    public void sendFileAnswerMessage(SendDocument sendDocument) {
+        if (sendDocument != null) {
+            try {
+                execute(sendDocument);
             } catch (TelegramApiException e) {
                 log.error(e);
             }

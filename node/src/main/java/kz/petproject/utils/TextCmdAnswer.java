@@ -47,10 +47,18 @@ public class TextCmdAnswer {
         List<InlineKeyboardButton> buttonRow4 = new ArrayList<>();
         buttonRow4.add(inlineKeyboardButtonType.getKeButton());
 
+        List<InlineKeyboardButton> buttonRow5 = new ArrayList<>();
+        buttonRow5.add(inlineKeyboardButtonType.getScriptButton());
+
+        List<InlineKeyboardButton> buttonRow6 = new ArrayList<>();
+        buttonRow6.add(inlineKeyboardButtonType.getOtherInstructionsButton());
+
         buttonRows.add(buttonRow1);
         buttonRows.add(buttonRow2);
         buttonRows.add(buttonRow3);
         buttonRows.add(buttonRow4);
+        buttonRows.add(buttonRow5);
+        buttonRows.add(buttonRow6);
 
         markupInLine.setKeyboard(buttonRows);
         sendMessage.setReplyMarkup(markupInLine);

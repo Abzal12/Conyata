@@ -73,32 +73,32 @@ public class InlineKeyboardButtonType {
         return vygruzkaButton;
     }
 
-    public InlineKeyboardButton getFaqButton4() {
-        var faqButton = new InlineKeyboardButton();
-        faqButton.setText(EmojiParser.parseToUnicode(FAQ_BUTTON_LABEL4.getLabel()));
-        faqButton.setCallbackData(FAQ_BUTTON4.getValue());
-        return faqButton;
+    public InlineKeyboardButton getScriptButton() {
+        var scriptButton = new InlineKeyboardButton();
+        scriptButton.setText(EmojiParser.parseToUnicode(SCRIPT_BUTTON_LABEL.getLabel()));
+        scriptButton.setCallbackData(SCRIPT_BUTTON.getValue());
+        return scriptButton;
     }
 
-    public InlineKeyboardButton getFaqButton5() {
-        var faqButton = new InlineKeyboardButton();
-        faqButton.setText(EmojiParser.parseToUnicode(FAQ_BUTTON_LABEL5.getLabel()));
-        faqButton.setCallbackData(FAQ_BUTTON5.getValue());
-        return faqButton;
+    public InlineKeyboardButton getConRoleButton() {
+        var conRoleButton = new InlineKeyboardButton();
+        conRoleButton.setText(EmojiParser.parseToUnicode(SCRIPT_CON_ROLE_BUTTON_LABEL.getLabel()));
+        conRoleButton.setCallbackData(SCRIPT_CON_ROLE_BUTTON.getValue());
+        return conRoleButton;
     }
 
-    public InlineKeyboardButton getFaqButton6() {
-        var faqButton = new InlineKeyboardButton();
-        faqButton.setText(EmojiParser.parseToUnicode(FAQ_BUTTON_LABEL6.getLabel()));
-        faqButton.setCallbackData(FAQ_BUTTON6.getValue());
-        return faqButton;
+    public InlineKeyboardButton getSpecConButton() {
+        var specConButton = new InlineKeyboardButton();
+        specConButton.setText(EmojiParser.parseToUnicode(SCRIPT_SPECCON_ROLE_BUTTON_LABEL.getLabel()));
+        specConButton.setCallbackData(SCRIPT_SPECCON_ROLE_BUTTON.getValue());
+        return specConButton;
     }
 
-    public InlineKeyboardButton getFaqButton7() {
-        var faqButton = new InlineKeyboardButton();
-        faqButton.setText(EmojiParser.parseToUnicode(FAQ_BUTTON_LABEL7.getLabel()));
-        faqButton.setCallbackData(FAQ_BUTTON7.getValue());
-        return faqButton;
+    public InlineKeyboardButton getOtherInstructionsButton() {
+        var otherInstructionsButton = new InlineKeyboardButton();
+        otherInstructionsButton.setText(EmojiParser.parseToUnicode(OTHER_INSTRUCTIONS_BUTTON_LABEL.getLabel()));
+        otherInstructionsButton.setCallbackData(OTHER_INSTRUCTIONS_BUTTON.getValue());
+        return otherInstructionsButton;
     }
 
     public InlineKeyboardButton getFaqButton8() {

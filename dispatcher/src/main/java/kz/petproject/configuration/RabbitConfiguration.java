@@ -24,6 +24,9 @@ public class RabbitConfiguration {
     @Value("${spring.rabbitmq.queues.answer-photo-id}")
     private String answerPhotoIdQueue;
 
+    @Value("${spring.rabbitmq.queues.answer-file-id}")
+    private String answerFileIdQueue;
+
     @Bean
     public MessageConverter jsonMessageConverter() {
         return new Jackson2JsonMessageConverter();
@@ -47,5 +50,10 @@ public class RabbitConfiguration {
     @Bean
     public Queue answerPhotoIdQueue() {
         return new Queue(answerPhotoIdQueue);
+    }
+
+    @Bean
+    public Queue answerFileIdQueue() {
+        return new Queue(answerFileIdQueue);
     }
 }

@@ -38,4 +38,19 @@ public class AnswerConsumerImpl implements AnswerConsumer {
             }
         }
     }
+
+    @Override
+    @RabbitListener(queues = "${spring.rabbitmq.queues.answer-file-id}")
+    public void consumeFileIds(ArrayList<String> fileId) {
+        if (!fileId.isEmpty()) {
+            String chatId = fileId.get(0);
+            updateController.setFileView(chatId, fileId.get(1));
+            try {
+                Thread.sleep(250);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                System.err.println("Thread was interrupted: " + e.getMessage());
+            }
+        }
+    }
 }

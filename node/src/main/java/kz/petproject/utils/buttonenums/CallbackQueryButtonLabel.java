@@ -14,10 +14,10 @@ public enum CallbackQueryButtonLabel {
     KE_BUTTON_LABEL("КЕ"),
     VYGRUZKA_BUTTON_LABEL("Выгрузка-select"),
 
-    FAQ_BUTTON_LABEL4("\uD83D\uDC49Насколько это безопасно?"),
-    FAQ_BUTTON_LABEL5("\uD83D\uDC49Как часто я могу выводить прибыль?"),
-    FAQ_BUTTON_LABEL6("\uD83D\uDC49Как работает партнерская программа?"),
-    FAQ_BUTTON_LABEL7("\uD83D\uDC49Что делать, если возникнут вопросы или трудности?"),
+    SCRIPT_BUTTON_LABEL("Скрипты для СУБД"),
+    SCRIPT_CON_ROLE_BUTTON_LABEL("Скрипт на роль админа АРМ ЦОН"),
+    SCRIPT_SPECCON_ROLE_BUTTON_LABEL("Скрипт на роли АРМ Спец ЦОН"),
+    OTHER_INSTRUCTIONS_BUTTON_LABEL("Другие инструкции"),
     FAQ_BUTTON_LABEL8("\uD83D\uDC49Как начать работу с роботом?"),
     FAQ_BUTTON_LABEL9("\uD83D\uDC49Есть ли риски в использовании робота?");
 

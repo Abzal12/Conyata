@@ -16,3 +16,4 @@ spring:
       callback-message-update: ${RABBIT_CALLBACK_MESSAGE_UPDATE_QUEUE}
       answer-message: ${RABBIT_ANSWER_MESSAGE_QUEUE}
       answer-photo-id: ${RABBIT_ANSWER_PHOTO_ID_QUEUE}
+      answer-file-id: ${RABBIT_ANSWER_FILE_ID_QUEUE}

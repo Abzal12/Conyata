@@ -7,4 +7,5 @@ import java.util.ArrayList;
 public interface ProducerService {
     void produceAnswer(SendMessage sendMessage);
     void producePhotoId(ArrayList<String> photoIds);
+    void produceFileId(ArrayList<String> fileId);
 }

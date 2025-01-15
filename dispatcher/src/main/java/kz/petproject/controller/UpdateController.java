@@ -6,6 +6,7 @@ import kz.petproject.utils.MessageUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import org.springframework.stereotype.Component;
+import org.telegram.telegrambots.meta.api.methods.send.SendDocument;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.objects.InputFile;
@@ -26,7 +27,7 @@ public class UpdateController {
     }
 
     public void processUpdate(Update update) {
-//        log.debug(update.getMessage());
+        log.debug(update.getMessage());
         if (update == null) {
             log.error("Received update is null");
             return;
@@ -75,5 +76,12 @@ public class UpdateController {
         sendPhoto.setChatId(chatId);
         sendPhoto.setPhoto(new InputFile(photoId));
         telegramBot.sendPhotoAnswerMessage(sendPhoto);
+    }
+
+    public void setFileView(String chatId, String fileId) {
+        SendDocument sendDocument = new SendDocument();
+        sendDocument.setChatId(chatId);
+        sendDocument.setDocument(new InputFile(fileId));
+        telegramBot.sendFileAnswerMessage(sendDocument);
     }
 }

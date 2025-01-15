@@ -20,6 +20,9 @@ public class ProducerServiceImpl implements ProducerService {
     @Value("${spring.rabbitmq.queues.answer-photo-id}")
     private String answerPhotoIdQueue;
 
+    @Value("${spring.rabbitmq.queues.answer-file-id}")
+    private String answerFileIdQueue;
+
     @Override
     public void produceAnswer(SendMessage sendMessage) {
         rabbitTemplate.convertAndSend(answerMessageQueue, sendMessage);
@@ -28,5 +31,10 @@ public class ProducerServiceImpl implements ProducerService {
     @Override
     public void producePhotoId(ArrayList<String> photoIds) {
         rabbitTemplate.convertAndSend(answerPhotoIdQueue, photoIds);
+    }
+
+    @Override
+    public void produceFileId(ArrayList<String> fileId) {
+        rabbitTemplate.convertAndSend(answerFileIdQueue, fileId);
     }
 }

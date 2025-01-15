@@ -210,18 +210,26 @@ public class CallbackQueryAnswer {
         return sendMessage;
     }
 
-    public SendMessage getFaqMenu4(Long chatId) {
+    public SendMessage getScriptMenu(Long chatId) {
         var sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
-        sendMessage.setText(FAQ_TEXT4.getText());
+        sendMessage.setText(SCRIPT_TEXT.getText());
 
         InlineKeyboardMarkup inlineMarkup = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> buttonRows = new ArrayList<>();
 
         List<InlineKeyboardButton> buttonRow1 = new ArrayList<>();
-        buttonRow1.add(inlineKeyboardButtonType.getZniButton());
+        buttonRow1.add(inlineKeyboardButtonType.getConRoleButton());
+
+        List<InlineKeyboardButton> buttonRow2 = new ArrayList<>();
+        buttonRow2.add(inlineKeyboardButtonType.getSpecConButton());
+
+        List<InlineKeyboardButton> buttonRow3 = new ArrayList<>();
+        buttonRow3.add(inlineKeyboardButtonType.getMainMenuButton());
 
         buttonRows.add(buttonRow1);
+        buttonRows.add(buttonRow2);
+        buttonRows.add(buttonRow3);
 
         inlineMarkup.setKeyboard(buttonRows);
         sendMessage.setReplyMarkup(inlineMarkup);
@@ -229,16 +237,16 @@ public class CallbackQueryAnswer {
         return sendMessage;
     }
 
-    public SendMessage getFaqMenu5(Long chatId) {
+    public SendMessage getOtherInstructionsMenu(Long chatId) {
         var sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
-        sendMessage.setText(FAQ_TEXT5.getText());
+        sendMessage.setText(OTHER_INSTRUCTIONS_TEXT.getText());
 
         InlineKeyboardMarkup inlineMarkup = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> buttonRows = new ArrayList<>();
 
         List<InlineKeyboardButton> buttonRow1 = new ArrayList<>();
-        buttonRow1.add(inlineKeyboardButtonType.getZniButton());
+        buttonRow1.add(inlineKeyboardButtonType.getMainMenuButton());
 
         buttonRows.add(buttonRow1);
 

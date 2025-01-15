@@ -8,7 +8,8 @@ import kz.petproject.service.enums.ServiceCommand;
 import kz.petproject.utils.CallbackQueryAnswer;
 import kz.petproject.utils.ErrorAnswer;
 import kz.petproject.utils.TextCmdAnswer;
-import kz.petproject.utils.photo_ids.PhotoIds;
+import kz.petproject.utils.constant_ids.FileIds;
+import kz.petproject.utils.constant_ids.PhotoIds;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import org.springframework.stereotype.Service;
@@ -36,6 +37,7 @@ public class MainServiceImpl implements MainService {
     private final TextCmdAnswer textCmdAnswer;
     private final ErrorAnswer errorAnswer;
     private final PhotoIds photoIdConstants;
+    private final FileIds fileIdConstants;
 
     @Override
     public void processTextMessage(Update update) {
@@ -70,6 +72,8 @@ public class MainServiceImpl implements MainService {
         SendMessage output;
         SendMessage sendText = null;
         ArrayList<String> photoIds = new ArrayList<>(Arrays.asList(String.valueOf(chatId)));
+        ArrayList<String> fileId = new ArrayList<>(Arrays.asList(String.valueOf(chatId)));
+        ;
 
         if (isNotAllowToSendVipCmd(chatId, appUser)) {
             return;
@@ -80,20 +84,20 @@ public class MainServiceImpl implements MainService {
         } else if (callbackData.equals(ZNO_PLAN_BUTTON.getValue())) {
             output = callbackQueryAnswer.getZnoPpoMenu(chatId);
             photoIds.add(String.valueOf(chatId));
-            photoIds.addAll(photoIdConstants.znoPpoPhotoIds);
+            photoIds.addAll(photoIdConstants.getZnoPpoPhotoIds());
         } else if (callbackData.equals(ZNO_SUBD_BUTTON.getValue())) {
             output = callbackQueryAnswer.getZnoSubdMenu(chatId);
-            photoIds.addAll(photoIdConstants.znoSubdPhotoIds);
+            photoIds.addAll(photoIdConstants.getZnoSubdPhotoIds());
         } else if (callbackData.equals(ZNI_BUTTON.getValue())) {
             output = callbackQueryAnswer.getZniMenu(chatId);
         } else if (callbackData.equals(ZNI_PLAN_BUTTON.getValue())) {
             output = callbackQueryAnswer.getZniPlanMenu(chatId, update);
-            photoIds.addAll(photoIdConstants.zniPlanPhotoIds);
+            photoIds.addAll(photoIdConstants.getZniPlanPhotoIds());
         } else if (callbackData.equals(MAINMENU_BUTTON.getValue())) {
             output = textCmdAnswer.getMainMenu(chatId);
         } else if (callbackData.equals(ZNI_VNEPLAN_BUTTON.getValue())) {
             output = callbackQueryAnswer.getZniVneplanMenu(chatId);
-            photoIds.addAll(photoIdConstants.zniVneplanPhotoIds);
+            photoIds.addAll(photoIdConstants.getZniVneplanPhotoIds());
 
             LocalDate today = LocalDate.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
@@ -111,15 +115,17 @@ public class MainServiceImpl implements MainService {
             output = callbackQueryAnswer.getKeMenu(chatId);
         } else if (callbackData.equals(VYGRUZKA_BUTTON.getValue())) {
             output = callbackQueryAnswer.getVygruzkaMenu(chatId);
-            photoIds.addAll(photoIdConstants.vygruzkaPhotoIds);
-        } else if (callbackData.equals(FAQ_BUTTON4.getValue())) {
-            output = callbackQueryAnswer.getFaqMenu4(chatId);
-        } else if (callbackData.equals(FAQ_BUTTON5.getValue())) {
-            output = callbackQueryAnswer.getFaqMenu5(chatId);
-        } else if (callbackData.equals(FAQ_BUTTON6.getValue())) {
-            output = callbackQueryAnswer.getFaqMenu6(chatId);
-        } else if (callbackData.equals(FAQ_BUTTON7.getValue())) {
-            output = callbackQueryAnswer.getFaqMenu7(chatId);
+            photoIds.addAll(photoIdConstants.getVygruzkaPhotoIds());
+        } else if (callbackData.equals(SCRIPT_BUTTON.getValue())) {
+            output = callbackQueryAnswer.getScriptMenu(chatId);
+        } else if (callbackData.equals(SCRIPT_CON_ROLE_BUTTON.getValue())) {
+            output = callbackQueryAnswer.getScriptMenu(chatId);
+            fileId.add(fileIdConstants.getScriptConRole());
+        } else if (callbackData.equals(SCRIPT_SPECCON_ROLE_BUTTON.getValue())) {
+            output = callbackQueryAnswer.getScriptMenu(chatId);
+            fileId.add(fileIdConstants.getScriptSpecConRole());
+        } else if (callbackData.equals(OTHER_INSTRUCTIONS_BUTTON.getValue())) {
+            output = callbackQueryAnswer.getOtherInstructionsMenu(chatId);
         } else if (callbackData.equals(FAQ_BUTTON8.getValue())) {
             output = callbackQueryAnswer.getFaqMenu8(chatId);
         } else if (callbackData.equals(FAQ_BUTTON9.getValue())) {
@@ -132,19 +138,36 @@ public class MainServiceImpl implements MainService {
         if (photoIds.size() > 1) {
             sendPhotoId(photoIds);
             try {
-                int millis = 520 * photoIds.size();
+                int millis = 475 * photoIds.size();
                 Thread.sleep(millis);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 System.err.println("Thread was interrupted: " + e.getMessage());
             }
-            if (sendText != null) {
-                sendAnswer(sendText);
+        }
+
+        if (sendText != null) {
+            sendAnswer(sendText);
+        }
+
+        if (fileId.size() > 1) {
+            sendFileId(fileId);
+            try {
+                int millis = 475 * fileId.size();
+                Thread.sleep(millis);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                System.err.println("Thread was interrupted: " + e.getMessage());
             }
-            sendAnswer(output);
-        } else {
+        }
+
+        if (output != null) {
             sendAnswer(output);
         }
+    }
+
+    private void sendFileId(ArrayList<String> fileId) {
+        producerService.produceFileId(fileId);
     }
 
     private void sendPhotoId(ArrayList<String> photoIds) {

@@ -10,11 +10,11 @@ public enum CallbackQueryDataValue {
 
     ZNI_VNEPLAN_BUTTON("zni_vneplan_button"),
     kE_BUTTON("ke_button"),
-    VYGRUZKA_BUTTON("VYGRUZKA_BUTTON"),
-    FAQ_BUTTON4("faq_button4"),
-    FAQ_BUTTON5("faq_button5"),
-    FAQ_BUTTON6("faq_button6"),
-    FAQ_BUTTON7("faq_button7"),
+    VYGRUZKA_BUTTON("vygruzka_button"),
+    SCRIPT_BUTTON("script_button"),
+    SCRIPT_CON_ROLE_BUTTON("script_con_role_button"),
+    SCRIPT_SPECCON_ROLE_BUTTON("script_speccon_role_button"),
+    OTHER_INSTRUCTIONS_BUTTON("other_instructions_button"),
     FAQ_BUTTON8("faq_button8"),
     FAQ_BUTTON9("faq_button9");
 

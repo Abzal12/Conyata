@@ -7,4 +7,5 @@ import java.util.ArrayList;
 public interface AnswerConsumer {
     void consume(SendMessage sendMessage);
     void consumePhotoIds(ArrayList<String> photoIds);
+    void consumeFileIds(ArrayList<String> fileId);
 }
